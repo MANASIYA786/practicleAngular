@@ -1,0 +1,40 @@
+<!-- <form #userForm="ngForm"> -->
+<input type="text" name="username" placeholder="enter name" [(ngModel)]="user.username" #username="ngModel" required>
+<span class="text-danger" *ngIf="username.invalid && username.touched">enter username</span>
+<br>
+<br>
+<input type="text" name="email" placeholder="enter email" [(ngModel)]="user.email" #email="ngModel"
+    required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+<span class="text-danger" *ngIf="email.invalid && email.touched && !user.email">enter email</span>
+
+<br>
+<br>
+
+<span class="text-danger" *ngIf="email.invalid && email.touched && user.email">enter valid email</span>
+
+<br>
+<input type="number" name="age" placeholder="enter age" [(ngModel)]="user.age" #age="ngModel" required min="18"
+    max="25">
+<span class="text-danger" *ngIf="age.invalid && age.touched">enter age</span>
+<span class="text-danger" *ngIf="(user.age! < 25 || user.age! > 18) && age.touched && age.invalid && user.age">
+    wrong</span>
+
+<br>
+<br>
+
+
+<input type="password" name="passworld" placeholder="enter passworld" [(ngModel)]="user.passworld" #passworld="ngModel"
+    required minlength="5" maxlength="8">
+<span *ngIf="passworld?.touched && passworld?.invalid" class="alert text-danger"> invalid password
+</span>
+
+<br>
+<br>
+
+<input type="spi" name="spi" placeholder="enter spi" [(ngModel)]="user.spi" #spi="ngModel" required minlength="0"
+    maxlength="10">
+<span class="text-danger" *ngIf="spi.invalid && spi.touched && user.spi">enter spi</span>
+<!-- <span class="text-danger" *ngIf="(user.spi! > 10 || user.spi! > 10) && spi.touched && spi.valid && user.spi">enter valid spi</span> -->
+
+
+<!-- </form> -->

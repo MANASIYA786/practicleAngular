@@ -1,0 +1,39 @@
+<form type="text" placeholder="Enter Your username" [formGroup]="userform">
+    <h1>FormBuilder</h1>
+    <input type="text" placeholder="Enter user name:" formControlName="username">
+    <span *ngIf="userform.get('username')?.errors?.['required']"  >Enter UserName:</span>
+    <span *ngIf="userform.get('username')?.errors?.['minlength']"style="color: darkred;">Enter Valid UserName:</span>
+<br>
+<br>
+
+
+    <input type="text" placeholder="Enter Email:" formControlName="email">
+    <span *ngIf="userform.get('email')?.errors?.['required']" style="color: darkolivegreen;">Enter Email:</span>
+    <span *ngIf="userform.get('email')?.errors?.['pattern']" style="color: darkred;">Enter Valid Email:</span>
+
+    <br>
+    <br>
+
+
+    <input type="password" placeholder="Enter password:" formControlName="password">
+    <span *ngIf="userform.get('password')?.errors?.['required']" style="color: darkolivegreen;">Enter password:</span>
+    <span *ngIf="userform.get('password')?.errors?.['pattern']" style="color: darkred;">Enter Valid password:</span>
+<br>
+<br>
+
+<input type="text" placeholder="Enter contact:" formControlName="contact">
+<span *ngIf="userform.get('contact')?.errors?.['required']" style="color: darkolivegreen;">Enter contact:</span>
+<span *ngIf="userform.get('contact')?.errors?.['pattern']" style="color: darkred;">Enter Valid contact:</span>
+
+<br>
+<br>
+
+<input type="number" placeholder="Enter spi:" formControlName="spi">
+<span *ngIf="userform.get('spi')?.invalid" style="color: red;">Enter valid spi:</span>
+
+
+<br><br>
+<button type="button" class="btn btn-primary"  [disabled]="userform.invalid">submit</button>
+</form>
+
+

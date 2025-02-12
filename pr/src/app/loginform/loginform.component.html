@@ -1,0 +1,20 @@
+<form  [formGroup]="loginform" >
+    
+    <h1 style="color: blue;">Login Form</h1>
+
+    <input type="text" placeholder="Enter Email:" formControlName="email">
+    <span *ngIf="loginform.get('email')?.errors?.['required']" style="color: darkolivegreen;">Enter Email:</span>
+    <span *ngIf="loginform.get('email')?.errors?.['pattern']" style="color: darkred;">Enter Valid Email:</span>
+
+    <br>
+    <br>
+
+
+    <input type="password" placeholder="Enter password:" formControlName="password">
+    <span *ngIf="loginform.get('password')?.errors?.['required']" style="color: darkolivegreen;">Enter password:</span>
+    <span *ngIf="loginform.get('password')?.errors?.['pattern']" style="color: darkred;">Enter Valid password:</span>
+<br>
+<br>
+<button type="button" (click)="onsubmit()">Submit</button>
+
+</form>

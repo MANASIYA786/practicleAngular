@@ -1,0 +1,16 @@
+<form [formGroup]="stuForm">
+<input type="text" formControlName="stuName" placeholder="Enter Your name:"/>
+<span class="text-danger" *ngIf="stuForm.get('stuName')?.invalid">Enter valid FormControlName</span>
+<br>
+<br>
+
+<input type="text" formControlName="stuEmail" placeholder="Enter Your Email:"/>
+<span class="text-danger" *ngIf="stuForm.get('stuEmail')?.invalid && stuForm.get('stuEmail')?.touched">Enter valid Email</span>
+<br>
+<br>
+
+<input type="text" formControlName="stuContact" placeholder="Enter Your Contact:"/>
+<span class="text-danger" *ngIf="stuForm.get('stuContact')?.invalid && stuForm.get('stuContact')?.touched">Enter valid Contact</span>
+
+
+</form>

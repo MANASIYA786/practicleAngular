@@ -1,0 +1,31 @@
+<form  [formGroup]="singUpForm" >
+    
+    <h1 style="color: blue;">Sign up</h1>
+    <input type="text" placeholder="Enter user name:" formControlName="username">
+    <span *ngIf="singUpForm.get('username')?.errors?.['required']"  >Enter UserName:</span>
+    <span *ngIf="singUpForm.get('username')?.errors?.['minlength']"style="color: darkred;">Enter Valid UserName:</span>
+<br>
+<br>
+
+
+    <input type="text" placeholder="Enter Email:" formControlName="email">
+    <span *ngIf="singUpForm.get('email')?.errors?.['required']" style="color: darkolivegreen;">Enter Email:</span>
+    <span *ngIf="singUpForm.get('email')?.errors?.['pattern']" style="color: darkred;">Enter Valid Email:</span>
+
+    <br>
+    <br>
+
+
+    <input type="password" placeholder="Enter password:" formControlName="password">
+    <span *ngIf="singUpForm.get('password')?.errors?.['required']" style="color: darkolivegreen;">Enter password:</span>
+    <span *ngIf="singUpForm.get('password')?.errors?.['pattern']" style="color: darkred;">Enter Valid password:</span>
+<br>
+<br>
+
+<input type="text" placeholder="Enter contact:" formControlName="contact">
+<span *ngIf="singUpForm.get('contact')?.errors?.['required']" style="color: darkolivegreen;">Enter contact:</span>
+<span *ngIf="singUpForm.get('contact')?.errors?.['pattern']" style="color: darkred;">Enter Valid contact:</span>
+
+<button type="button" (click)="onsubmit()">Submit</button>
+
+</form>
